@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}About - Copper Grey Consulting{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="hero-section about-hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span>20+ Years Experience</span>
+            </div>
+
+            <h1 class="hero-title">
+                Transforming <span class="text-accent">Small Businesses</span>
+                Through Expert Project Management
+            </h1>
+
+            <p class="hero-subtitle">
+                We're passionate about helping small businesses achieve their goals through structured
+                project management, strategic PMO services, and proven methodologies that deliver real results.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="95" data-suffix="%">0</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Story -->
+<section class="section about-story">
+    <div class="container">
+        <div class="about-story-grid">
+            <div class="story-content">
+                <div class="section-header">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="section-subtitle">
+                        Built on experience, driven by results, focused on your success
+                    </p>
+                </div>
+
+                <div class="story-text">
+                    <p>
+                        Copper Grey Consulting was founded with a simple mission: to make professional project
+                        management accessible to small businesses. After witnessing countless small businesses
+                        struggle with project failures, budget overruns, and missed deadlines, we knew there
+                        had to be a better way.
+                    </p>
+
+                    <p>
+                        With over 20 years of experience in enterprise project management, we've adapted
+                        proven methodologies specifically for small business needs. We understand that small
+                        businesses don't have the luxury of large budgets or dedicated project teams, which
+                        is why we've created scalable, cost-effective solutions that deliver real results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section services-section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">
+                Comprehensive project management solutions tailored for small business success
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Project Management</h3>
+                    <p>
+                        End-to-end project delivery using proven methodologies adapted for small business needs.
+                        From initiation to closure, we ensure your projects are delivered on time, within budget,
+                        and to specification.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="service-content">
+                    <h3>PMO Setup & Strategy</h3>
+                    <p>
+                        Build a Project Management Office that scales with your business growth. We help you
+                        establish governance, processes, and tools that improve project success rates and
+                        organizational maturity.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Project Recovery & Audit</h3>
+                    <p>
+                        Rescue troubled projects and get them back on track. Our project health assessments
+                        identify issues early, while our recovery services help salvage failing initiatives
+                        and deliver successful outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Projects?</h2>
+            <p>
+                Let's discuss how we can help your business achieve project success.
+                Book a free consultation to explore your options.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" onclick="openCalendlyPopup(); return false;" class="btn btn-primary btn-large">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule Free Consultation</span>
+                </a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline btn-large">
+                    <i class="fas fa-envelope"></i>
+                    <span>Send Us a Message</span>
+                </a>
+            </div>
+            <div class="cta-note">
+                <i class="fas fa-shield-alt"></i>
+                <span>No obligation • Free consultation • Immediate insights</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

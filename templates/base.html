@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Copper Grey Consulting - Project & PMO Services{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/logo.jpg') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo.jpg') }}">
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-brand">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Copper Grey Consulting" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">
+                        <span class="brand-copper">Copper Grey</span>
+                        <span class="brand-consulting">Consulting</span>
+                    </span>
+                    <span class="brand-tagline">Project & PMO Excellence</span>
+                </div>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="#" onclick="openCalendlyPopup(); return false;" class="nav-cta">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Book Consultation</span>
+                </a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        <div class="flash-content">
+                            <i class="fas fa-{% if category == 'success' %}check-circle{% else %}exclamation-circle{% endif %}"></i>
+                            <span>{{ message }}</span>
+                        </div>
+                        <button class="flash-close" aria-label="Close message">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Copper Grey Consulting">
+                        <div>
+                            <h3>Copper Grey Consulting</h3>
+                            <p class="footer-tagline">Project & PMO Services for Small Business</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Empowering small businesses with expert project management and PMO services.
+                        Based in South Africa, serving clients worldwide with over 20 years of experience.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a href="#" onclick="openCalendlyPopup(); return false;">Book Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('about') }}">Project Management</a></li>
+                        <li><a href="{{ url_for('about') }}">PMO Services</a></li>
+                        <li><a href="{{ url_for('about') }}">Business Transformation</a></li>
+                        <li><a href="{{ url_for('about') }}">Project Recovery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                   <div class="footer-flex-container">
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> hello@coppergreyconsulting.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
+                        <p><i class="fas fa-globe"></i> Available Worldwide</p>
+                    </div>
+                   </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/copper-grey-consulting" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/coppergreyconsulting" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/coppergreyconsulting" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com/coppergreyconsulting" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Copper Grey Consulting. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <!--a href="#privacy">Privacy Policy</a-->
+                        <!--a href="#terms">Terms of Service</a-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-empath">
+            <a href="https://www.empathtechnologysolutions.com" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <span>Powered by Empath Technology Solutions</span>
+                    <img src="{{ url_for('static', filename='images/empath_logo.png') }}" alt="Empath Technology Solutions Logo">
+                </div>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Calendly Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

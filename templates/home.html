@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Copper Grey Consulting{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section home-hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-announcement">
+                <i class="fas fa-shield-alt"></i>
+                <span>Trusted by 50+ Small Businesses Worldwide</span>
+            </div>
+
+            <h1 class="hero-title">
+                Transform Your Business with
+                <span class="text-accent">Expert Project Management</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Stop struggling with failed projects, missed deadlines, and budget overruns.
+                Get the professional project management expertise your small business deserves
+                – without the enterprise price tag.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#" onclick="openCalendlyPopup(); return false;" class="btn btn-primary btn-hero">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Get Free 30-Min Consultation</span>
+                </a>
+                <a href="{{ url_for('about') }}" class="btn btn-outline btn-hero">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Learn More About Us</span>
+                </a>
+            </div>
+
+            <div class="hero-trust-indicators">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>20+ Years Experience</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-award"></i>
+                    <span>95% Success Rate</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Global Reach</span>
+                </div>
+            </div>
+        </div>
+
+        <!--div class="hero-visual">
+            <div class="hero-image-container">
+                <img src="/placeholder.svg?height=400&width=500" alt="Professional Project Management" class="hero-image">
+
+                <div class="floating-card card-1">
+                    <div class="card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>95% Success Rate</h4>
+                        <p>Projects delivered on time</p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-2">
+                    <div class="card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>50+ Clients</h4>
+                        <p>Businesses transformed</p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-3">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>24hr Response</h4>
+                        <p>Quick turnaround</p>
+                    </div>
+                </div>
+            </div-->
+        </div>
+    </div>
+</section>
+
+<!-- Problem/Solution Section -->
+<section class="section problem-solution-section">
+    <div class="container">
+        <div class="problem-solution-grid">
+            <div class="problem-side">
+                <div class="section-header">
+                    <h2 class="section-title">Are You Struggling With...</h2>
+                </div>
+                <div class="problem-list">
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Projects Running Over Budget</h4>
+                            <p>Costs spiraling out of control with no clear visibility</p>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Missed Deadlines & Delays</h4>
+                            <p>Projects dragging on with no end in sight</p>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Poor Communication</h4>
+                            <p>Team confusion and stakeholder frustration</p>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Lack of Structure</h4>
+                            <p>No clear processes or project management framework</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-side">
+                <div class="section-header">
+                    <h2 class="section-title">We Provide Solutions!</h2>
+                </div>
+                <div class="solution-list">
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Budget Control & Transparency</h4>
+                            <p>Clear financial tracking and regular budget reviews</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>On-Time Project Delivery</h4>
+                            <p>Proven methodologies that keep projects on schedule</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Clear Communication</h4>
+                            <p>Regular updates and stakeholder engagement</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Structured Processes</h4>
+                            <p>Tailored PMO frameworks that scale with your business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="section services-overview bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">How We Help Small Businesses Succeed</h2>
+            <p class="section-subtitle">
+                Comprehensive project management solutions designed specifically for small business needs and budgets
+            </p>
+        </div>
+
+        <div class="services-overview-grid">
+            <div class="service-overview-card">
+                <div class="service-overview-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Project Management</h3>
+                <p>End-to-end project delivery using proven methodologies tailored for small businesses.</p>
+                <ul class="service-overview-features">
+                    <li>Project planning & execution</li>
+                    <li>Risk management</li>
+                    <li>Quality assurance</li>
+                </ul>
+                <a href="{{ url_for('about') }}" class="service-overview-link">
+                    <span>Learn More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-overview-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <div class="service-overview-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>PMO Setup & Strategy</h3>
+                <p>Build a Project Management Office that scales with your business growth.</p>
+                <ul class="service-overview-features">
+                    <li>PMO framework design</li>
+                    <li>Process standardization</li>
+                    <li>Tool implementation</li>
+                </ul>
+                <a href="{{ url_for('about') }}" class="service-overview-link">
+                    <span>Learn More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-overview-card">
+                <div class="service-overview-icon">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <h3>Project Recovery</h3>
+                <p>Rescue troubled projects and get them back on track quickly and efficiently.</p>
+                <ul class="service-overview-features">
+                    <li>Project health assessment</li>
+                    <li>Issue resolution</li>
+                    <li>Recovery planning</li>
+                </ul>
+                <a href="{{ url_for('about') }}" class="service-overview-link">
+                    <span>Learn More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="services-cta">
+            <p>Need something specific? We offer customized solutions for your unique challenges.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                <span>Discuss Your Needs</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta-section">
+    <div class="container">
+        <div class="final-cta-content">
+            <h2>Ready to Transform Your Projects?</h2>
+            <p>
+                Stop letting failed projects hold your business back. Get the professional project management
+                expertise you need to succeed – starting with a free 30-minute consultation.
+            </p>
+            <div class="final-cta-buttons">
+                <a href="#" onclick="openCalendlyPopup(); return false;" class="btn btn-primary btn-large">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule Free Consultation</span>
+                </a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline btn-large">
+                    <i class="fas fa-envelope"></i>
+                    <span>Send Us a Message</span>
+                </a>
+            </div>
+            <div class="final-cta-guarantee">
+                <i class="fas fa-shield-alt"></i>
+                <span>30-day satisfaction guarantee • No long-term contracts • Results-focused approach</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

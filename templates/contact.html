@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Copper Grey Consulting{% endblock %}
+
+{% block content %}
+<!-- Contact Hero -->
+<section class="hero-section contact-hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Let's <span class="text-accent">Transform</span> Your Projects
+            </h1>
+
+            <p class="hero-subtitle">
+                Ready to take the stress out of your projects? Book a free 30-minute consultation
+                and let's explore how we can support your business goals.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#" onclick="openCalendlyPopup(); return false;" class="btn btn-primary btn-hero">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule Free Consultation</span>
+                </a>
+                <a href="mailto:hello@coppergreyconsulting.com" class="btn btn-outline btn-hero">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Us Directly</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">
+                        We're here to help you succeed. Reach out through any of these channels.
+                    </p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hello@coppergreyconsulting.com</p>
+                            <p class="contact-note">We respond within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Based in South Africa</p>
+                            <p class="contact-note">Available worldwide via remote collaboration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Tell us about your project and we'll get back to you with a tailored solution.</p>
+                    </div>
+
+                    <form method="POST" class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    Name <span class="required">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Email <span class="required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" id="company" name="company" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project_type" class="form-label">Project Type</label>
+                            <select id="project_type" name="project_type" class="form-select">
+                                <option value="">Select a project type</option>
+                                <option value="project-management">Project Management</option>
+                                <option value="pmo-setup">PMO Setup & Strategy</option>
+                                <option value="business-transformation">Business Transformation</option>
+                                <option value="project-recovery">Project Recovery & Audit</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">
+                                Project Details <span class="required">*</span>
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-textarea"
+                                rows="5"
+                                placeholder="Tell us about your project challenges, goals, timeline, and any specific requirements..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            <span>Send Message</span>
+                        </button>
+
+                        <p class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Your information is secure and will never be shared with third parties.</span>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
